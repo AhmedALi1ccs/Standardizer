@@ -320,7 +320,7 @@ def preprocess_address(address):
             new_address = f"{num1} {route_type} {num2}"
         print(f"Transforming {address} to {new_address}")
         return new_address
-
+    address = re.sub(r'(\d+)\s*-\s*(\d+)', r'\1-\2', address)
     # 4. Convert "456 Maple Ave 34-Unit" to "456 Maple Ave Unit 34"
     address = re.sub(r'(\d+)-unit', r'unit \1', address)
 
